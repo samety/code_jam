@@ -1,14 +1,21 @@
 import sys
+import math
+
+diffs = []
 
 
-def findFairSqNum(a, b):
+def findFairSqNum(A, B):
+    a = int(math.sqrt(A))
+    b = int(math.sqrt(B))
+    diffs.append(b-a)
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(0)
     inFile = sys.stdin
     T = int(inFile.readline())
     for i in range(T):
-        a, b = map(int, inFile.readline().strip().split(' '))
-        print "Case #%s: %s" % (i+1, findFairSqNum(a, b))
+        A, B = map(int, inFile.readline().strip().split(' '))
+        print "Case #%s: %s" % (i+1, findFairSqNum(A, B))
+
+    print min(diffs), max(diffs)
